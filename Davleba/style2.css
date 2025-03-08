@@ -1,0 +1,96 @@
+.burger {
+  display: none;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  color: red;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.nav-list.active {
+  width: 320px;
+  height: 100vh; 
+  z-index: 1000;
+  background-color: rgb(208, 11, 34);
+}
+
+.nav-list li {
+  margin: 20px 0;
+}
+
+.nav-list a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.nav-list a:hover {
+  background-color: #555;
+}
+
+.burger {
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+  position: relative;
+  z-index: 1001;
+  right: 150px; 
+  margin-left: 10px;
+}
+
+.close-nav {
+  display: none; 
+  font-size: 40px;
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 150px;
+  z-index: 1002;
+}
+
+
+@media (max-width: 768px) {
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    height: 0; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: black;
+  }
+
+  .nav-list.active {
+    height: 100vh;
+  }
+
+  .burger {
+    display: block; 
+  }
+
+  .close-nav {
+    display: none; 
+  }
+
+  .nav-list.active + .burger {
+    display: none; 
+  }
+
+  .nav-list.active + .burger + .close-nav {
+    display: block; 
+  }
+}
